@@ -6,6 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "dependencies": {
+    "crc": "^3.4.1",
+    "moment": "^2.15.1",
+    "pad": "^1.0.1"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/reyespaolo/meitrack-parser.git"
