@@ -7,5 +7,5 @@ const gprsgpsupdateraw = new Buffer('$$A138,862170013556541,AAA,35,7.092076,79.9
 
 
 // console.log(mvt380.parseMeitrack(smsgpsupdateraw));
-console.log(mvt380.parse(gprsgpsupdateraw));
-console.log(mvt380.parseMeitrack(gprsgpsupdateraw));
+// console.log(mvt380.parse(gprsgpsupdateraw));
+console.log(mvt380.parseMeitrack(smsgpsupdateraw));

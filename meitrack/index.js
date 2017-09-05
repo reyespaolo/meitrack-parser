@@ -3,20 +3,23 @@ const config = require('./data.js');
 const moment = require('moment');
 
 const dateParse = (date, format) => {
-  date = date.split("/");
-  format = format.split("/");
-  let year,month,day;
 
-  for(var key in format){
-    if(format[key]==="yy"){
-      year ="20"+date[key]
-    }else if(format[key]==="mm"){
-      month = date[key]
-    }else if(format[key]==="dd"){
-      day = date[key]
+  if(format!=undefined){
+    date = date.split("/");
+    format = format.split("/");
+    let year,month,day;
+
+    for(var key in format){
+      if(format[key]==="yy"){
+        year ="20"+date[key]
+      }else if(format[key]==="mm"){
+        month = date[key]
+      }else if(format[key]==="dd"){
+        day = date[key]
+      }
     }
+    return (`${year}-${month}-${day}`);
   }
-  return (`${year}-${month}-${day}`);
 }
 
 const getIndex = raw => {
@@ -31,7 +34,7 @@ const getIndex = raw => {
 
 const parseMeitrack = raw => {
   let parsedData = parse(raw);
-  let jsonResult = {"alert" : null,"latitude":null,"longitude":null,"speed":null,"date":null,"parsedDate": Date,"dateTime":Date,"time":null,"power":null,"door":null,"acc":null,"lastlatitude":null,"lastlongitude":null,"mnc":null,"mcc":null,"timestampsent":null,"direction":null};
+  let jsonResult = {"alert" : null,"latitude":null,"longitude":null,"speed":null,"date":null,"parsedDate": Date,"dateTime":Date,"time":null,"power":null,"door":null,"acc":null,"lastlatitude":null,"lastlongitude":null,"mnc":null,"mcc":null,"timestampsent":null,"direction":null, "GPSPosition":null, "GPSSIgnal":null, "vehicleBattery":null};
 
   if(parsedData.status == "Failed"){
     jsonResult = parsedData;
